@@ -10,7 +10,9 @@ let project = Project(
             bundleId: "dev.tuist.DIVE-APPLE.watchkitapp",
             infoPlist: .extendingDefault(with: [
                 "WKApplication": true,
-                "WKCompanionAppBundleIdentifier": "dev.tuist.DIVE-APPLE"
+                "WKCompanionAppBundleIdentifier": "dev.tuist.DIVE-APPLE",
+                "NSLocationWhenInUseUsageDescription":
+                    "This app needs location to show coordinates",
             ]),
             sources: ["DIVE_APPLE/Sources/**"],
             resources: ["DIVE_APPLE/Resources/**"],
