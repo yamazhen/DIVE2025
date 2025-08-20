@@ -4,32 +4,31 @@ read this to know how to run the project
 ## if you plan to use neovim
 there are a few things you need
 
-1. install xcode
+1. xcode editor
 2. watchos runtime
-4. tuist cli
-5. xcodes cli (to install the runtimes)
+3. ios runtime
+4. xcodebuild.nvim plugin
+5. xcode-build-server
 
-install commands (one by one)
+### steps
+1. install xcode
 ```
 brew install Xcode
-brew install xcodesorg/made/xcodes
-brew install tuist
-brew install xcode-build-server
-sudo xcode-select -s /Applications/Xcode.app/
-sudo xcodebuild -license accept
-xcodes runtimes install "watchOS 11.5"
 ```
-
-then you need to cd into DIVE_APPLE/ and run
+2. install watchos and ios runtime through xcode
+3. vim.lsp.enable("sourcekit-lsp")
+4. install xcodebuild.nvim on neovim
+[xcodebuild.nvim](https://github.com/wojciech-kulik/xcodebuild.nvim)
+5. set up buildServer.json with
 ```
-tuist generate
-xcode-build-server config -scheme DIVE_APPLE -workspace *.xcworkspace
+xcode-build-server config -scheme "DIVE_APPLE Watch App" -project DIVE_APPLE.xcodeproj
 ```
-
-and run with
+5. use the neovim command
 ```
-tuist run DIVE_APPLE
+XcodebuildSetup
+XcodebuildBuildRun
 ```
+6. profit
 
 ## if you use xcode editor
 just download watchOS runtime through xcode editor and press the run button in the editor bruh

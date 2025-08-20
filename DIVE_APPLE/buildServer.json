@@ -12,8 +12,8 @@
 	"argv": [
 		"/opt/homebrew/bin/xcode-build-server"
 	],
-	"workspace": "/Users/zhen/personal/DIVE2025/DIVE_APPLE/DIVE_APPLE.xcworkspace",
-	"build_root": "/Users/zhen/Library/Developer/Xcode/DerivedData/DIVE_APPLE-gawhauvresaqixfdduiobdkxuhih",
-	"scheme": "DIVE_APPLE",
+	"workspace": "/Users/zhen/personal/DIVE2025/DIVE_APPLE/DIVE_APPLE.xcodeproj/project.xcworkspace",
+	"build_root": "/Users/zhen/Library/Developer/Xcode/DerivedData/DIVE_APPLE-epxyyhrfzmukonandhdpygsimkjc",
+	"scheme": "DIVE_APPLE Watch App",
 	"kind": "xcode"
 }
