@@ -1,1 +1,9 @@
 .DS_Store
+
+DIVE_APPLE/Config.xcconfig
+DIVE_APPLE/.nvim
+DIVE_APPLE/buildServer.json
+
+*.ipa
+*.dSYM.zip
+*.dSYM

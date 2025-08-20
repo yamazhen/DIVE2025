@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             LocationCard()
-            MarineCard()
+            TideCard()
             WeatherAlertCard()
             HealthMonitorCard()
             EmergencyCard()
