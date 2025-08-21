@@ -1,5 +1,14 @@
 import SwiftUI
 
+// Split tide string safely
+func parseTideTime(_ timeString: String) -> (time: String, height: String?, arrow: String?) {
+    let parts = timeString.components(separatedBy: " ")
+    let time = parts.count > 0 ? parts[0] : "--:--"
+    let height = parts.count > 1 ? parts[1] : nil
+    let arrow = parts.count > 2 ? parts[2] : nil
+    return (time, height, arrow)
+}
+
 struct TideCard: View {
     @EnvironmentObject var locationManager: LocationManager
     @State private var tides: [Tide] = []
@@ -35,22 +44,21 @@ struct TideCard: View {
                                     .background(Color.red)
                                     .cornerRadius(6)
 
-                                let timePartsTwo = currentTide.pTime2.components(separatedBy: " ")
+                                let tide2 = parseTideTime(currentTide.pTime2)
                                 VStack {
-                                    Text(timePartsTwo[0])
+                                    Text(tide2.time)
                                     HStack {
-                                        Text(timePartsTwo[1]).font(.system(size: 10))
-                                        Text(timePartsTwo[2]).font(.system(size: 10))
-                                            .foregroundColor(Color.red)
+                                        if let h = tide2.height { Text(h).font(.system(size: 10)) }
+                                        if let a = tide2.arrow { Text(a).font(.system(size: 10)).foregroundColor(.red) }
                                     }
                                 }
-                                let timePartsFour = currentTide.pTime4.components(separatedBy: " ")
+
+                                let tide4 = parseTideTime(currentTide.pTime4)
                                 VStack {
-                                    Text(timePartsFour[0])
+                                    Text(tide4.time)
                                     HStack {
-                                        Text(timePartsFour[1]).font(.system(size: 10))
-                                        Text(timePartsFour[2]).font(.system(size: 10))
-                                            .foregroundColor(Color.red)
+                                        if let h = tide4.height { Text(h).font(.system(size: 10)) }
+                                        if let a = tide4.arrow { Text(a).font(.system(size: 10)).foregroundColor(.red) }
                                     }
                                 }
                             }
@@ -62,22 +70,21 @@ struct TideCard: View {
                                     .background(Color.blue)
                                     .cornerRadius(6)
 
-                                let timePartsOne = currentTide.pTime1.components(separatedBy: " ")
+                                let tide1 = parseTideTime(currentTide.pTime1)
                                 VStack {
-                                    Text(timePartsOne[0])
+                                    Text(tide1.time)
                                     HStack {
-                                        Text(timePartsOne[1]).font(.system(size: 10))
-                                        Text(timePartsOne[2]).font(.system(size: 10))
-                                            .foregroundColor(Color.blue)
+                                        if let h = tide1.height { Text(h).font(.system(size: 10)) }
+                                        if let a = tide1.arrow { Text(a).font(.system(size: 10)).foregroundColor(.blue) }
                                     }
                                 }
-                                let timePartsThree = currentTide.pTime3.components(separatedBy: " ")
+
+                                let tide3 = parseTideTime(currentTide.pTime3)
                                 VStack {
-                                    Text(timePartsThree[0])
+                                    Text(tide3.time)
                                     HStack {
-                                        Text(timePartsThree[1]).font(.system(size: 10))
-                                        Text(timePartsThree[2]).font(.system(size: 10))
-                                            .foregroundColor(Color.blue)
+                                        if let h = tide3.height { Text(h).font(.system(size: 10)) }
+                                        if let a = tide3.arrow { Text(a).font(.system(size: 10)).foregroundColor(.blue) }
                                     }
                                 }
                             }

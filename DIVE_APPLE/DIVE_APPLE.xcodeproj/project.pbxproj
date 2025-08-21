@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6FA24E4F2E55BCD7006D5654 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6FA24E4E2E55BCD7006D5654 /* Config.xcconfig */; };
 		6FA6D0492E55A851004CF5B5 /* DIVE_APPLE Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6FA6D0482E55A851004CF5B5 /* DIVE_APPLE Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -36,17 +35,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6FA24E4E2E55BCD7006D5654 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		6FA6D03B2E55A850004CF5B5 /* DIVE_APPLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIVE_APPLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA6D0482E55A851004CF5B5 /* DIVE_APPLE Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIVE_APPLE Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		6FA6D03D2E55A850004CF5B5 /* DIVE_APPLE */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DIVE_APPLE;
-			sourceTree = "<group>";
-		};
 		6FA6D04C2E55A851004CF5B5 /* DIVE_APPLE Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "DIVE_APPLE Watch App";
@@ -75,10 +68,8 @@
 		6FA6D0322E55A850004CF5B5 = {
 			isa = PBXGroup;
 			children = (
-				6FA6D03D2E55A850004CF5B5 /* DIVE_APPLE */,
 				6FA6D04C2E55A851004CF5B5 /* DIVE_APPLE Watch App */,
 				6FA6D03C2E55A850004CF5B5 /* Products */,
-				6FA24E4E2E55BCD7006D5654 /* Config.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,9 +98,6 @@
 			);
 			dependencies = (
 				6FA6D04B2E55A851004CF5B5 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				6FA6D03D2E55A850004CF5B5 /* DIVE_APPLE */,
 			);
 			name = DIVE_APPLE;
 			packageProductDependencies = (
@@ -183,7 +171,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FA24E4F2E55BCD7006D5654 /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +211,6 @@
 /* Begin XCBuildConfiguration section */
 		6FA6D0532E55A852004CF5B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FA24E4E2E55BCD7006D5654 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
