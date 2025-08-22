@@ -18,7 +18,8 @@ struct TideCard: View {
     var body: some View {
         VStack {
             if isLoading {
-                ProgressView("Loading tides...").font(.caption2)
+                Image(systemName: "slowmo")
+                .symbolEffect(.rotate.byLayer, options: .repeat(.continuous))
             } else if let error = errorMessage {
                 VStack(spacing: 4) {
                     Image(systemName: "exclamationmark.triangle").foregroundColor(.orange).font(

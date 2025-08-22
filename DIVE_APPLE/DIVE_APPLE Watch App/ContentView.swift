@@ -15,6 +15,7 @@ struct ContentView: View {
             LocationCard()
             TideCard()
             WeatherCard()
+            PointCard()
             HealthMonitorCard()
             EmergencyCard()
         }

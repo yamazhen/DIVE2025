@@ -15,7 +15,8 @@ struct WeatherCard: View {
     var body: some View {
         VStack {
             if isLoading {
-                ProgressView("Loading weather...").font(.caption2)
+                Image(systemName: "slowmo")
+                .symbolEffect(.rotate.byLayer, options: .repeat(.continuous))
             } else if let error = errorMessage {
                 VStack(spacing: 4) {
                     Image(systemName: "exclamationmark.triangle")
@@ -38,26 +39,62 @@ struct WeatherCard: View {
 
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
-                                Text("🌤 \(current.sky)")
-                                Text("🌡 \(current.temp) °C")
-                                Text("💧 Humidity: \(current.humidity)%")
+                                HStack {
+                                    Image(systemName: "sun.max.fill") // choose icon based on current.sky
+                                        .symbolRenderingMode(.multicolor)
+                                        .symbolEffect(.bounce, options: .nonRepeating)
+                                    Text(current.sky)
+                                }
+                                HStack {
+                                    Image(systemName: "thermometer.high") // choose icon based on current.sky
+                                        .symbolRenderingMode(.multicolor)
+                                        .symbolEffect(.bounce, options: .nonRepeating)
+                                    Text(":\(current.temp) °C")
+                                }
+                                HStack {
+                                    Image(systemName: "humidity") // choose icon based on current.sky
+                                        .symbolRenderingMode(.multicolor)
+                                        .symbolEffect(.bounce, options: .nonRepeating)
+                                    Text(":\(current.humidity)%")
+                                }
+                               
                             }
                             Spacer()
                             VStack(alignment: .leading, spacing: 4) {
-                                Text("💨 \(current.winddir) \(current.windspd)m/s")
-                                Text("🌊 Wave: \(current.pago)m")
-                                if let rain = Double(current.rain), rain > 0 {
-                                    Text("☔️ Rain: \(rain)mm")
+                                HStack {
+                                    Image(systemName: "wind") // choose icon based on current.sky
+                                        .symbolRenderingMode(.multicolor)
+                                        .symbolEffect(.bounce, options: .nonRepeating)
+                                    Text("\(current.winddir) \(current.windspd)m/s")
+                                }
+                                HStack {
+                                    Image(systemName: "water.waves") // choose icon based on current.sky
+                                        .symbolRenderingMode(.multicolor)
+                                    .symbolEffect(.bounce, options: .nonRepeating)
+                                    Text(" \(current.pago)m")
+                                }
+                                HStack {
+                                    if let rain = Double(current.rain), rain > 0 {
+                                        Image(systemName: "cloud.heavyrain.fill") // choose icon based on current.sky
+                                            .symbolRenderingMode(.multicolor)
+                                            .symbolEffect(.bounce, options: .nonRepeating)
+                                        Text(" \(rain)mm")
+                                    }
                                 }
                             }
                         }
                         .font(.caption2)
                     }
                 } else {
-                    Text("No weather data")
-                        .font(.caption)
+                    Image(systemName: "exclamationmark.square.fill")
+                        .foregroundColor(.orange)
+                    .symbolEffect(.bounce, options: .nonRepeating)
+                    Text("No weather data").font(.caption)
                 }
             } else {
+                Image(systemName: "exclamationmark.square.fill") // choose icon based on current.sky
+                    .symbolRenderingMode(.multicolor)
+                    .symbolEffect(.bounce, options: .nonRepeating)
                 Text("No weather loaded").font(.caption)
             }
         }
