@@ -1,9 +1,3 @@
-//  WeatherService.swift
-//  DIVE_APPLE
-//
-//  Created by Nodirbek Bokiev on 8/21/25.
-//
-
 import Foundation
 
 class WeatherService {
