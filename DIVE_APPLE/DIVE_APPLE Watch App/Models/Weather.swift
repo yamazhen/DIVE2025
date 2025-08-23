@@ -1,8 +1,3 @@
-//  Weather.swift
-//  DIVE_APPLE
-//
-//  Created by Nodirbek Bokiev on 8/21/25.
-//
 struct Weather: Codable {
     let weather: [WeatherEntry]
     let info: WeatherInfo

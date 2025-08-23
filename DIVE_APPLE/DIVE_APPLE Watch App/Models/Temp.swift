@@ -1,10 +1,3 @@
-//
-//  Temp.swift
-//  DIVE_APPLE
-//
-//  Created by Nodirbek Bokiev on 8/21/25.
-//
-
 struct Temp: Codable {
     let lat: String
     let lon: String

@@ -12,12 +12,9 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            LocationCard()
             TideCard()
             WeatherCard()
             PointCard()
-            HealthMonitorCard()
-            EmergencyCard()
         }
         .tabViewStyle(PageTabViewStyle())
         .environmentObject(alertManager) // inject globally
