@@ -342,9 +342,9 @@ struct TideCard: View {
         let minutes = Int(diff) % 3600 / 60
 
         if hours > 0 {
-            return "\(hours)h \(minutes)m"
+            return "\(hours)시간 \(minutes)분"
         } else {
-            return "\(minutes)m"
+            return "\(minutes)분"
         }
     }
 }
