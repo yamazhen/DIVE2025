@@ -7,35 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6FA6D0492E55A851004CF5B5 /* DIVE_APPLE Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6FA6D0482E55A851004CF5B5 /* DIVE_APPLE Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6F61D7422E57FB4000432AC0 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6F61D7412E57FB4000432AC0 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6FA6D04A2E55A851004CF5B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6FA6D0332E55A850004CF5B5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6FA6D0472E55A851004CF5B5;
-			remoteInfo = "DIVE_APPLE Watch App";
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		6FA6D0582E55A852004CF5B5 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				6FA6D0492E55A851004CF5B5 /* DIVE_APPLE Watch App.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		6FA6D03B2E55A850004CF5B5 /* DIVE_APPLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIVE_APPLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F61D7412E57FB4000432AC0 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		6FA6D0482E55A851004CF5B5 /* DIVE_APPLE Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIVE_APPLE Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -48,13 +24,6 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6FA6D0382E55A850004CF5B5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6FA6D0452E55A851004CF5B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,13 +39,13 @@
 			children = (
 				6FA6D04C2E55A851004CF5B5 /* DIVE_APPLE Watch App */,
 				6FA6D03C2E55A850004CF5B5 /* Products */,
+				6F61D7412E57FB4000432AC0 /* Config.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
 		6FA6D03C2E55A850004CF5B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6FA6D03B2E55A850004CF5B5 /* DIVE_APPLE.app */,
 				6FA6D0482E55A851004CF5B5 /* DIVE_APPLE Watch App.app */,
 			);
 			name = Products;
@@ -85,27 +54,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6FA6D03A2E55A850004CF5B5 /* DIVE_APPLE */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6FA6D0592E55A852004CF5B5 /* Build configuration list for PBXNativeTarget "DIVE_APPLE" */;
-			buildPhases = (
-				6FA6D0372E55A850004CF5B5 /* Sources */,
-				6FA6D0382E55A850004CF5B5 /* Frameworks */,
-				6FA6D0392E55A850004CF5B5 /* Resources */,
-				6FA6D0582E55A852004CF5B5 /* Embed Watch Content */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6FA6D04B2E55A851004CF5B5 /* PBXTargetDependency */,
-			);
-			name = DIVE_APPLE;
-			packageProductDependencies = (
-			);
-			productName = DIVE_APPLE;
-			productReference = 6FA6D03B2E55A850004CF5B5 /* DIVE_APPLE.app */;
-			productType = "com.apple.product-type.application";
-		};
 		6FA6D0472E55A851004CF5B5 /* DIVE_APPLE Watch App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6FA6D0552E55A852004CF5B5 /* Build configuration list for PBXNativeTarget "DIVE_APPLE Watch App" */;
@@ -138,9 +86,6 @@
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					6FA6D03A2E55A850004CF5B5 = {
-						CreatedOnToolsVersion = 16.4;
-					};
 					6FA6D0472E55A851004CF5B5 = {
 						CreatedOnToolsVersion = 16.4;
 					};
@@ -160,37 +105,23 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6FA6D03A2E55A850004CF5B5 /* DIVE_APPLE */,
 				6FA6D0472E55A851004CF5B5 /* DIVE_APPLE Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6FA6D0392E55A850004CF5B5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6FA6D0462E55A851004CF5B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F61D7422E57FB4000432AC0 /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6FA6D0372E55A850004CF5B5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6FA6D0442E55A851004CF5B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,17 +131,10 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		6FA6D04B2E55A851004CF5B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6FA6D0472E55A851004CF5B5 /* DIVE_APPLE Watch App */;
-			targetProxy = 6FA6D04A2E55A851004CF5B5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
 		6FA6D0532E55A852004CF5B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F61D7412E57FB4000432AC0 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -272,6 +196,7 @@
 		};
 		6FA6D0542E55A852004CF5B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F61D7412E57FB4000432AC0 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -384,67 +309,6 @@
 			};
 			name = Release;
 		};
-		6FA6D05A2E55A852004CF5B5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = DIVE_APPLE;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tbd.DIVE-APPLE";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		6FA6D05B2E55A852004CF5B5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = DIVE_APPLE;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tbd.DIVE-APPLE";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -462,15 +326,6 @@
 			buildConfigurations = (
 				6FA6D0562E55A852004CF5B5 /* Debug */,
 				6FA6D0572E55A852004CF5B5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6FA6D0592E55A852004CF5B5 /* Build configuration list for PBXNativeTarget "DIVE_APPLE" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6FA6D05A2E55A852004CF5B5 /* Debug */,
-				6FA6D05B2E55A852004CF5B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
