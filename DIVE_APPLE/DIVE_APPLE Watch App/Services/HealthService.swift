@@ -175,7 +175,6 @@ class HealthService: ObservableObject {
         
         let alert: HealthAlert
         
-        // Blood pressure categories (American Heart Association guidelines)
         switch (systolic, diastolic) {
         case (180..., _), (_, 120...):
             alert = HealthAlert(

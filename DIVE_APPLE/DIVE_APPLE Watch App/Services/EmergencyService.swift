@@ -13,6 +13,8 @@ class EmergencyService: NSObject {
                 preferredStyle: .alert,
                 actions: [alert]
             )
+
+            WKInterfaceDevice.current().play(.notification)
         #else
             if let url = URL(string: "tel:112") {
 
@@ -20,20 +22,6 @@ class EmergencyService: NSObject {
                 return
             }
 
-            fallbackEmergencyAlert()
         #endif
     }
-
-    private func fallbackEmergencyAlert() {
-        let alert = WKAlertAction(title: "Emergency", style: .default) {
-        }
-
-        WKExtension.shared().rootInterfaceController?.presentAlert(
-            withTitle: "EMERGENCY",
-            message: "Unable to call emergency services. Please call 112 manually.",
-            preferredStyle: .alert,
-            actions: [alert]
-        )
-    }
-
 }

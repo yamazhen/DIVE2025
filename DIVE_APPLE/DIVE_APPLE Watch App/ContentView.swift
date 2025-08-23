@@ -5,6 +5,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
+            SmartFishingCard()
             TideCard()
             WeatherCard()
             PointCard()
