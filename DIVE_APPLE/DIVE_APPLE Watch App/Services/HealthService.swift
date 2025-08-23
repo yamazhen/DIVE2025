@@ -13,6 +13,8 @@ struct HealthAlert {
 class HealthService: ObservableObject {
     private let healthStore = HKHealthStore()
     @Published var currentHeartRate: Double = 0
+    @Published var currentBloodPressureSystolic: Double = 0
+    @Published var currentBloodPressureDiastolic: Double = 0
     @Published var isMonitoring = false
     @Published var healthAlert: HealthAlert?
     @Published var hasHealthPermission = false
@@ -26,7 +28,9 @@ class HealthService: ObservableObject {
         }
 
         let heartRateType = HKQuantityType.quantityType(forIdentifier: .heartRate)!
-        let typesToRead: Set = [heartRateType]
+        let systolicType = HKQuantityType.quantityType(forIdentifier: .bloodPressureSystolic)!
+        let diastolicType = HKQuantityType.quantityType(forIdentifier: .bloodPressureDiastolic)!
+        let typesToRead: Set = [heartRateType, systolicType, diastolicType]
 
         healthStore.requestAuthorization(toShare: nil, read: typesToRead) {
             [weak self] success, error in
@@ -34,6 +38,7 @@ class HealthService: ObservableObject {
                 self?.hasHealthPermission = success
                 if success {
                     self?.startHeartRateMonitoring()
+                    self?.startBloodPressureMonitoring()
                 } else if let error = error {
                     print("HealthKit authorization failed: \(error.localizedDescription)")
                 }
@@ -100,6 +105,10 @@ class HealthService: ObservableObject {
         healthAlert = alert
     }
 
+    func triggerEmergencyProtocol(reason: String) {
+        triggerEmergencyProtocol(bpm: 0, reason: reason)
+    }
+    
     private func triggerEmergencyProtocol(bpm: Double, reason: String) {
         guard !dangerAlertCooldown else { return }
 
@@ -112,6 +121,93 @@ class HealthService: ObservableObject {
         }
     }
 
+    func startBloodPressureMonitoring() {
+        guard hasHealthPermission else { return }
+        
+        startBloodPressureQuery(for: .bloodPressureSystolic)
+        startBloodPressureQuery(for: .bloodPressureDiastolic)
+    }
+    
+    private func startBloodPressureQuery(for identifier: HKQuantityTypeIdentifier) {
+        guard let bpType = HKQuantityType.quantityType(forIdentifier: identifier) else { return }
+        
+        let query = HKAnchoredObjectQuery(
+            type: bpType,
+            predicate: nil,
+            anchor: nil,
+            limit: HKObjectQueryNoLimit
+        ) { _, samples, _, _, _ in
+            self.processBloodPressureSamples(samples, for: identifier)
+        }
+        
+        query.updateHandler = { _, samples, _, _, _ in
+            self.processBloodPressureSamples(samples, for: identifier)
+        }
+        
+        healthStore.execute(query)
+    }
+    
+    private func processBloodPressureSamples(_ samples: [HKSample]?, for identifier: HKQuantityTypeIdentifier) {
+        guard let samples = samples as? [HKQuantitySample],
+              let latestSample = samples.last else { return }
+        
+        let pressure = latestSample.quantity.doubleValue(for: HKUnit.millimeterOfMercury())
+        
+        DispatchQueue.main.async {
+            switch identifier {
+            case .bloodPressureSystolic:
+                self.currentBloodPressureSystolic = pressure
+            case .bloodPressureDiastolic:
+                self.currentBloodPressureDiastolic = pressure
+            default:
+                break
+            }
+            
+            self.checkBloodPressureAlert(
+                systolic: self.currentBloodPressureSystolic,
+                diastolic: self.currentBloodPressureDiastolic
+            )
+        }
+    }
+    
+    private func checkBloodPressureAlert(systolic: Double, diastolic: Double) {
+        guard systolic > 0 && diastolic > 0 else { return }
+        
+        let alert: HealthAlert
+        
+        // Blood pressure categories (American Heart Association guidelines)
+        switch (systolic, diastolic) {
+        case (180..., _), (_, 120...):
+            alert = HealthAlert(
+                message: "DANGER: Blood pressure critically high (\(Int(systolic))/\(Int(diastolic)))", 
+                type: .danger
+            )
+            triggerEmergencyProtocol(bpm: 0, reason: "High blood pressure crisis")
+        case (140...179, _), (_, 90...119):
+            alert = HealthAlert(
+                message: "High blood pressure (\(Int(systolic))/\(Int(diastolic)))", 
+                type: .high
+            )
+        case (130...139, _), (_, 80...89):
+            alert = HealthAlert(
+                message: "Elevated blood pressure (\(Int(systolic))/\(Int(diastolic)))", 
+                type: .high
+            )
+        case (...90, _), (_, ...60):
+            alert = HealthAlert(
+                message: "Low blood pressure (\(Int(systolic))/\(Int(diastolic)))", 
+                type: .low
+            )
+        default:
+            alert = HealthAlert(
+                message: "Normal blood pressure (\(Int(systolic))/\(Int(diastolic)))", 
+                type: .normal
+            )
+        }
+        
+        healthAlert = alert
+    }
+
     func stopMonitoring() {
         isMonitoring = false
         dangerAlertCooldown = false
@@ -121,5 +217,12 @@ class HealthService: ObservableObject {
         dangerAlertCooldown = false  // reset cooldown for testing
         currentHeartRate = bpm
         checkHeartRateAlert(bpm)
+    }
+    
+    func simulateBloodPressure(systolic: Double, diastolic: Double) {
+        dangerAlertCooldown = false  // reset cooldown for testing
+        currentBloodPressureSystolic = systolic
+        currentBloodPressureDiastolic = diastolic
+        checkBloodPressureAlert(systolic: systolic, diastolic: diastolic)
     }
 }

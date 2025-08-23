@@ -89,23 +89,24 @@ struct AlertCard: View {
             }
         }
     }
-    
+
     private func testRealClimate() {
         if let location = locationManager.location {
             Task {
                 do {
                     let weatherResponse = try await WeatherService.shared.fetchWeather(
-                        lat: location.coordinate.latitude, 
+                        lat: location.coordinate.latitude,
                         lon: location.coordinate.longitude
                     )
-                    
+
                     await MainActor.run {
                         alertService.resetCooldowns()
                         let initialCount = alertService.activeAlerts.count
-                        
+
                         Task {
-                            await alertService.checkClimateAnomalyAlert(weather: weatherResponse.weather)
-                            
+                            await alertService.checkClimateAnomalyAlert(
+                                weather: weatherResponse.weather)
+
                             // Check if any new alerts were added
                             let newCount = alertService.activeAlerts.count
                             if newCount == initialCount {
@@ -133,23 +134,23 @@ struct AlertCard: View {
             }
         }
     }
-    
+
     private func testRealTide() {
         if let location = locationManager.location {
             Task {
                 do {
                     let tides = try await TideService.shared.fetchTideData(
-                        lat: location.coordinate.latitude, 
+                        lat: location.coordinate.latitude,
                         lon: location.coordinate.longitude
                     )
-                    
+
                     await MainActor.run {
                         alertService.resetCooldowns()
                         let initialCount = alertService.activeAlerts.count
-                        
+
                         Task {
                             await alertService.checkHighTideAlert(tides: tides)
-                            
+
                             // Check if any new alerts were added
                             let newCount = alertService.activeAlerts.count
                             if newCount == initialCount {
