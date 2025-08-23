@@ -6,13 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		6F61D7422E57FB4000432AC0 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6F61D7412E57FB4000432AC0 /* Config.xcconfig */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		6F61D7412E57FB4000432AC0 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		6FA6D0482E55A851004CF5B5 /* DIVE_APPLE Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIVE_APPLE Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0016BE8C2E59AC8B009BFE16 /* DIVE_APPLE Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIVE_APPLE Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -38,17 +33,8 @@
 			isa = PBXGroup;
 			children = (
 				6FA6D04C2E55A851004CF5B5 /* DIVE_APPLE Watch App */,
-				6FA6D03C2E55A850004CF5B5 /* Products */,
-				6F61D7412E57FB4000432AC0 /* Config.xcconfig */,
+				0016BE8C2E59AC8B009BFE16 /* DIVE_APPLE Watch App.app */,
 			);
-			sourceTree = "<group>";
-		};
-		6FA6D03C2E55A850004CF5B5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6FA6D0482E55A851004CF5B5 /* DIVE_APPLE Watch App.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,7 +59,7 @@
 			packageProductDependencies = (
 			);
 			productName = "DIVE_APPLE Watch App";
-			productReference = 6FA6D0482E55A851004CF5B5 /* DIVE_APPLE Watch App.app */;
+			productReference = 0016BE8C2E59AC8B009BFE16 /* DIVE_APPLE Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +87,7 @@
 			mainGroup = 6FA6D0322E55A850004CF5B5;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 6FA6D03C2E55A850004CF5B5 /* Products */;
+			productRefGroup = 6FA6D0322E55A850004CF5B5;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -115,7 +101,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F61D7422E57FB4000432AC0 /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +119,6 @@
 /* Begin XCBuildConfiguration section */
 		6FA6D0532E55A852004CF5B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F61D7412E57FB4000432AC0 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -196,7 +180,6 @@
 		};
 		6FA6D0542E55A852004CF5B5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F61D7412E57FB4000432AC0 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -258,8 +241,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DIVE-APPLE-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = DIVE_APPLE;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access\n  needs location access to show marine data for\nThis app needs location access to show marine data for your current location";
+				INFOPLIST_KEY_CFBundleDisplayName = "바다타임";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "바다타임은 현재 위치를 기반으로 해양 데이터를 표시하기 위해 위치 접근이 필요합니다.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.tbd.DIVE-APPLE";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -288,8 +271,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DIVE-APPLE-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = DIVE_APPLE;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access\n  needs location access to show marine data for\nThis app needs location access to show marine data for your current location";
+				INFOPLIST_KEY_CFBundleDisplayName = "바다타임";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "바다타임은 현재 위치를 기반으로 해양 데이터를 표시하기 위해 위치 접근이 필요합니다.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.tbd.DIVE-APPLE";
 				LD_RUNPATH_SEARCH_PATHS = (
