@@ -1,6 +1,6 @@
 # 🌊 BREEZE - Smart Marine Safety & Fishing Companion
 
-A comprehensive Apple Watch application designed for marine safety monitoring and intelligent fishing assistance, built for DIVE2025 hackathon.
+A comprehensive smart watch application designed for marine safety monitoring and intelligent fishing assistance, built for DIVE2025 hackathon.
 
 ## 📱 Overview
 
