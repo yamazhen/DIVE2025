@@ -11,9 +11,9 @@ Breeze is an advanced smart watch application that combines marine safety featur
 ## 👥 Team
 
 **BREEZE** was developed by:
-- **Zhen** - Swift Developer
-- **Nodirbek** - Team Leader &  Swift Developer
-- **Jamshidbek** - Kotlin Developer
+- **[Zhen](https://github.com/yamazhen)** - Swift Developer
+- **[Nodirbek](https://github.com/nodiry)** - Team Leader &  Swift Developer
+- **[Jamshidbek](https://github.com/jamie10x)** - Kotlin Developer
 
 The Kotlin project is located in Jamshidbek's repository. If you're interested in accessing it, please reach out to him directly since it's a private repository.
 
