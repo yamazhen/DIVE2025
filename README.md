@@ -4,9 +4,11 @@ A comprehensive smart watch application designed for marine safety monitoring an
 
 ## 📱 Overview
 
-<img src="info/TBD.jpg" alt="TBD" width="50%">
+<img src="info/TBD.jpg" alt="Team celebrating 3rd place in Track Partner's Challenge" width="50%">
 
 Breeze is an advanced smart watch application that combines marine safety features with AI-powered fishing analysis to enhance the experience of marine enthusiasts, fishermen, and divers. The app provides real-time environmental monitoring, emergency services, and intelligent fishing recommendations.
+
+**🏆 Achievement: 3rd Place Winner in DIVE2025 Track Partner's Challenge**
 
 ## 👥 Team
 
