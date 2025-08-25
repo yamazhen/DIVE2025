@@ -4,13 +4,18 @@ A comprehensive Apple Watch application designed for marine safety monitoring an
 
 ## 📱 Overview
 
-Breeze is an advanced watchOS application that combines marine safety features with AI-powered fishing analysis to enhance the experience of marine enthusiasts, fishermen, and divers. The app provides real-time environmental monitoring, emergency services, and intelligent fishing recommendations.
+![TBD](info/TBD.jpg)
+
+Breeze is an advanced smart watch application that combines marine safety features with AI-powered fishing analysis to enhance the experience of marine enthusiasts, fishermen, and divers. The app provides real-time environmental monitoring, emergency services, and intelligent fishing recommendations.
 
 ## 👥 Team
 
 **BREEZE** was developed by:
-- **Zhen** - Developer
-- **Nodirbek** - Team Leader & Developer
+- **Zhen** - Swift Developer
+- **Nodirbek** - Team Leader &  Swift Developer
+- **Jamshidbek** - Kotlin Developer
+
+The Kotlin project is located in Jamshidbek's repository. If you're interested in accessing it, please reach out to him directly since it's a private repository.
 
 ## ✨ Key Features
 
@@ -42,10 +47,9 @@ Breeze is an advanced watchOS application that combines marine safety features w
 ## 🛠 Technical Architecture
 
 ### Platform
-- **Target Platform**: Apple watchOS
-- **Development Environment**: Xcode with SwiftUI, Neovim
-- **Language**: Swift
-- **Architecture**: MVVM with SwiftUI and Combine
+- **Target Platform**: Apple watchOS and Android wearOS
+- **Development Environment**: Xcode with SwiftUI, Neovim, Android Studio
+- **Language**: Swift, Kotlin
 
 ### Key Components
 - **Location Manager**: GPS and location services
